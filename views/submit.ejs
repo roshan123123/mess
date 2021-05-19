@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Reviews</h1>
+    <p class="secret-text">Don't only eat, share the reviews anonymously!</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="form-group">
+     <!-- <input type="text" class="form-control text-center" name="nameoffood" placeholder="name of food?"> -->
+        <select name="food" id="food">
+        <%  foodlist.forEach(function(food){ %>
+            <option value="<%= food %>"><%= food %></option>
+        <%  }) %>
+
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="secret" placeholder="What's your review?">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>
